@@ -1,0 +1,2 @@
+# ChitankaSharp
+Chitanka API wrapper
