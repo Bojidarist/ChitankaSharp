@@ -53,7 +53,7 @@ namespace ChitankaAPI
         public CTextSeries Series { get; set; }
 
         [JsonProperty("sernr")]
-        public int? SeriesNumber { get; set; }
+        public string SeriesNumber { get; set; }
 
         [JsonProperty("headlevel")]
         public int? HeadLevel { get; set; }
