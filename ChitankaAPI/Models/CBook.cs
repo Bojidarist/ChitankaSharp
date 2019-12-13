@@ -44,7 +44,7 @@ namespace ChitankaAPI
         public string Type { get; set; }
 
         [JsonProperty("sequence")]
-        public string Sequence { get; set; }
+        public CSequence Sequence { get; set; }
 
         [JsonProperty("sequenceNr")]
         public int? SequenceNumber { get; set; }

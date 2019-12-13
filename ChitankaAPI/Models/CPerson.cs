@@ -36,5 +36,8 @@ namespace ChitankaAPI
 
         [JsonProperty("type")]
         public string Type { get; set; }
+
+        [JsonProperty("country")]
+        public CCountry Country { get; set; }
     }
 }
