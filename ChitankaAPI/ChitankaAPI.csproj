@@ -2,10 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Bojidar Qnkov</Authors>
+    <Description>Easy to use wrapper of Chitanka's API.</Description>
+    <PackageProjectUrl>https://github.com/Bojidarist/ChitankaSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Bojidarist/ChitankaSharp</RepositoryUrl>
+    <PackageTags>API, Chitanka, Books, Texts, Sequences, Categories, Literature, Series</PackageTags>
+    <PackageLicenseFile></PackageLicenseFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>logo.jpg</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Images\logo.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
