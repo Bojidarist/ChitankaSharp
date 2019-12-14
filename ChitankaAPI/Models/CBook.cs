@@ -1,9 +1,14 @@
-﻿using Newtonsoft.Json;
+﻿using ChitankaAPI.Helpers;
+using Newtonsoft.Json;
+using System;
+using System.Net;
 
 namespace ChitankaAPI
 {
     public class CBook
     {
+        #region Public properties
+
         [JsonProperty("id")]
         public int? Id { get; set; }
 
@@ -75,5 +80,42 @@ namespace ChitankaAPI
 
         [JsonProperty("annotation")]
         public string Annotation { get; set; }
+
+        #endregion
+
+        #region Methods
+
+        public string DownloadAsString()
+        {
+            return $"https://chitanka.info/book/{ Id }-{ Slug }.txt".DownloadStringFromURL();
+        }
+
+        public void DownloadAsFile(string fileName, CFileType fileType)
+        {
+            string type = "";
+            switch (fileType)
+            {
+                case CFileType.TXT:
+                    type = "txt";
+                    break;
+                case CFileType.EPUB:
+                    type = "epub";
+                    break;
+                case CFileType.FB2:
+                    type = "fb2";
+                    break;
+                case CFileType.SFB:
+                    type = "sfb";
+                    break;
+                default:
+                    throw new ArgumentException("The file type is not valid.");
+            }
+            using (WebClient client = new WebClient())
+            {
+                client.DownloadFile($"http://chitanka.info/book/{ Id }.{ type }", $"{ fileName }.{ type }");
+            }
+        }
+
+        #endregion
     }
 }
